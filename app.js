@@ -4,51 +4,84 @@ function goTo(screenId) {
   const target = document.getElementById(screenId);
   if (target) {
     target.classList.add('active');
+    window.scrollTo(0, 0);
     target.scrollTop = 0;
   }
 }
 
-// ===== QUIZ DATA =====
+// ===== QUIZ DATA — based on real deck & lessons learned =====
 const questions = [
   {
-    icon: '🃏',
-    text: 'כמה קלפים לוקחים בתחילת המשחק?',
-    options: ['5 קלפים', '7 קלפים', '10 קלפים', '3 קלפים'],
+    icon: '🥚',
+    text: 'בתור הראשון במשחק — מה הדבר הכי חשוב לעשות?',
+    options: [
+      'לתקוף מיד עם הפוקימון הפעיל',
+      'לשים צ\'ארמנדר בספסל ולצרף לו אנרגיה',
+      'לשחק Lillie\'s Determination',
+      'לחכות ולא לעשות כלום'
+    ],
     correct: 1,
-    feedback: '✅ נכון! לוקחים 7 קלפים ליד בתחילת המשחק.'
+    feedback: '✅ נכון! תור 1 = צ\'ארמנדר בספסל + אנרגיה עליו. ככה מתחילים לבנות את צ\'אריזארד!'
   },
   {
-    icon: '⚡',
-    text: 'כמה אנרגיה אפשר לצרף בכל תור?',
-    options: ['כמה שרוצים', '2 אנרגיות', 'אנרגיה אחת בלבד', 'בכלל אי אפשר'],
+    icon: '💃',
+    text: 'מה תפקידו של אוריקוריו בתחילת המשחק?',
+    options: [
+      'לשמור בספסל ולא לצאת',
+      'לנצח את המשחק לבד',
+      'לנלחם בחזית בזמן שצ\'אריזארד מתכונן בספסל',
+      'לשלוף אנרגיות מהחפיסה'
+    ],
     correct: 2,
-    feedback: '✅ נכון! בכל תור מצרפים אנרגיה אחת בלבד לפוקימון.'
-  },
-  {
-    icon: '🥇',
-    text: 'כמה קלפי פרס צריך לאסוף כדי לנצח?',
-    options: ['3 קלפים', '4 קלפים', '5 קלפים', '6 קלפים'],
-    correct: 3,
-    feedback: '✅ נכון! צריך לאסוף 6 קלפי פרס כדי לנצח!'
+    feedback: '✅ נכון! אוריקוריו מגן בחזית בזמן שצ\'אריזארד גדל בשקט. הוא מקבל כוח מכל קלף אימון שמשחקים!'
   },
   {
     icon: '🍬',
-    text: 'מה עושה הקלף "Rare Candy"?',
+    text: 'מה עושה Rare Candy?',
     options: [
       'נותן לך אנרגיה',
-      'מצמיח פוקימון בסיסי ישר לשלב 2',
       'מרפא פוקימון פצוע',
-      'מגרע קלפים ליריב'
+      'מצמיח צ\'ארמנדר ישר לצ\'אריזארד — בלי לחכות לצ\'ארמליאון!',
+      'שולף קלפים מהחפיסה'
     ],
-    correct: 1,
-    feedback: '✅ נכון! Rare Candy מצמיח צ\'ארמנדר ישר לצ\'אריזארד!'
+    correct: 2,
+    feedback: '✅ נכון! Rare Candy קופץ מעל שלב ביניים ישר לצ\'אריזארד. זה הקלף הכי חשוב בחפיסה!'
   },
   {
-    icon: '🏆',
-    text: 'כמה קלפי פרס נותן EX פוקימון כשמנצחים אותו?',
-    options: ['קלף אחד', '2 קלפים', '3 קלפים', 'אפס קלפים'],
+    icon: '🔥',
+    text: 'מה עושה Firebreather?',
+    options: [
+      'מזיק ליריב',
+      'מביא 2 אנרגיות אש מהחפיסה ישר לצ\'אריזארד',
+      'מערבב את יד היריב',
+      'מחזיר פוקימון מהגנוזה'
+    ],
     correct: 1,
-    feedback: '✅ נכון! EX פוקימון נותן 2 קלפי פרס!'
+    feedback: '✅ נכון! Firebreather טוען 2 אנרגיות בבת אחת — כמו לדלג על 2 תורות של הכנה!'
+  },
+  {
+    icon: '👩',
+    text: 'מתי הזמן הכי טוב לשחק Lillie\'s Determination?',
+    options: [
+      'תמיד בתור הראשון',
+      'כשהיד ריקה ואין קלפים טובים',
+      'כשיש כבר הרבה קלפים ביד',
+      'רק בסוף המשחק'
+    ],
+    correct: 1,
+    feedback: '✅ נכון! Lillie\'s Determination שולפת 8 קלפים — הכי טוב כשהיד ריקה ואין Rare Candy או אנרגיה!'
+  },
+  {
+    icon: '👑',
+    text: 'מתי הכי כדאי להשתמש ב-Boss\'s Orders?',
+    options: [
+      'בתור הראשון תמיד',
+      'כשהיריב חזק מדי',
+      'כשיש פוקימון של היריב בספסל שכבר קיבל נזק — שלוף אותו לקרב!',
+      'כדי למשוך קלפים'
+    ],
+    correct: 2,
+    feedback: '✅ נכון! Boss\'s Orders בוחר מי ייצא לקרב. שלוף את הפוקימון הכי חלש של היריב ותגמור אותו!'
   }
 ];
 
@@ -64,6 +97,11 @@ function renderQuestion() {
   document.getElementById('q-icon').textContent = q.icon;
   document.getElementById('q-text').textContent = q.text;
   document.getElementById('q-feedback').textContent = '';
+  document.getElementById('q-feedback').style.color = 'var(--fire-yellow)';
+
+  // Progress bar
+  const pct = (currentQ / questions.length) * 100;
+  document.getElementById('progress-bar').style.width = pct + '%';
 
   const optContainer = document.getElementById('q-options');
   optContainer.innerHTML = '';
@@ -86,15 +124,16 @@ function selectAnswer(idx) {
   buttons.forEach((btn, i) => {
     btn.disabled = true;
     if (i === q.correct) btn.classList.add('correct');
-    else if (i === idx)  btn.classList.add('wrong');
+    else if (i === idx) btn.classList.add('wrong');
   });
 
   const feedback = document.getElementById('q-feedback');
   if (idx === q.correct) {
     score++;
     feedback.textContent = q.feedback;
+    feedback.style.color = '#69db7c';
   } else {
-    feedback.textContent = '❌ לא נכון... ' + q.feedback;
+    feedback.textContent = '❌ לא נכון. ' + q.feedback;
     feedback.style.color = '#ff6b6b';
   }
 
@@ -102,29 +141,28 @@ function selectAnswer(idx) {
     currentQ++;
     if (currentQ < questions.length) {
       renderQuestion();
-      document.getElementById('q-feedback').style.color = 'var(--fire-yellow)';
     } else {
       showResult();
     }
-  }, 2000);
+  }, 2200);
 }
 
 function showResult() {
+  document.getElementById('progress-bar').style.width = '100%';
   document.getElementById('quiz-area').classList.add('hidden');
   document.getElementById('quiz-result').classList.remove('hidden');
 
   const pct = score / questions.length;
   let icon, title, text;
-
   if (pct === 1) {
-    icon = '🏆'; title = 'מושלם!';
-    text = `ענית נכון על כל ${questions.length} השאלות! אתה אלוף הפוקימון! 🔥`;
+    icon = '🏆'; title = 'אלוף אמיתי!';
+    text = `ענית נכון על כל ${questions.length} השאלות! צ'אריזארד גאה בך! 🔥`;
   } else if (pct >= 0.6) {
     icon = '⭐'; title = 'כל הכבוד!';
     text = `ענית נכון על ${score} מתוך ${questions.length}. עוד קצת תרגול ותהיה אלוף!`;
   } else {
     icon = '📚'; title = 'כמעט!';
-    text = `ענית נכון על ${score} מתוך ${questions.length}. נסה לעיין שוב במדריך ואז נסה שוב!`;
+    text = `ענית נכון על ${score} מתוך ${questions.length}. קרא שוב את המדריך ונסה שוב!`;
   }
 
   document.getElementById('result-icon').textContent = icon;
@@ -138,20 +176,14 @@ function restartQuiz() {
   answered = false;
   document.getElementById('quiz-area').classList.remove('hidden');
   document.getElementById('quiz-result').classList.add('hidden');
-  document.getElementById('q-feedback').style.color = 'var(--fire-yellow)';
   renderQuestion();
 }
 
-// Init quiz when screen is shown (patch goTo)
-const _goTo = goTo;
+// Patch goTo to init quiz when entering
+const _origGoTo = goTo;
 window.goTo = function(screenId) {
-  _goTo(screenId);
-  if (screenId === 'screen-quiz') {
-    restartQuiz();
-  }
+  _origGoTo(screenId);
+  if (screenId === 'screen-quiz') restartQuiz();
 };
 
-// ===== INIT =====
-document.addEventListener('DOMContentLoaded', () => {
-  renderQuestion();
-});
+document.addEventListener('DOMContentLoaded', renderQuestion);
