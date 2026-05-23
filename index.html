@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>מדריך הקרב של צ'אריזארד!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#e63946" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="צ'אריזארד TCG" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+</head>
+<body>
+
+  <!-- SCREEN: Intro -->
+  <div id="screen-intro" class="screen active">
+    <div class="flame-bg"></div>
+    <div class="intro-content">
+      <div class="charizard-emoji bounce">🔥</div>
+      <h1>מדריך הקרב<br/>של <span class="gold">צ'אריזארד!</span></h1>
+      <p class="subtitle">למד איך לנצח כמו אלוף!</p>
+      <button class="btn-fire" onclick="goTo('screen-menu')">
+        בואו נתחיל! 🚀
+      </button>
+    </div>
+  </div>
+
+  <!-- SCREEN: Menu -->
+  <div id="screen-menu" class="screen">
+    <header class="top-bar">
+      <button class="back-btn" onclick="goTo('screen-intro')">← חזרה</button>
+      <h2>בחר נושא 📚</h2>
+    </header>
+    <div class="menu-grid">
+      <div class="menu-card card-red" onclick="goTo('screen-setup')">
+        <div class="card-icon">🎴</div>
+        <div class="card-title">לפני הקרב</div>
+        <div class="card-sub">איך מכינים את החפיסה</div>
+      </div>
+      <div class="menu-card card-orange" onclick="goTo('screen-turn')">
+        <div class="card-icon">⚡</div>
+        <div class="card-title">סדר התור</div>
+        <div class="card-sub">מה עושים בכל תור</div>
+      </div>
+      <div class="menu-card card-yellow" onclick="goTo('screen-strategy')">
+        <div class="card-icon">🧠</div>
+        <div class="card-title">אסטרטגיה</div>
+        <div class="card-sub">חשוב לפני שמתקיפים!</div>
+      </div>
+      <div class="menu-card card-blue" onclick="goTo('screen-quiz')">
+        <div class="card-icon">🏆</div>
+        <div class="card-title">חידון!</div>
+        <div class="card-sub">בדוק את עצמך</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN: Setup -->
+  <div id="screen-setup" class="screen">
+    <header class="top-bar">
+      <button class="back-btn" onclick="goTo('screen-menu')">← חזרה</button>
+      <h2>לפני הקרב 🎴</h2>
+    </header>
+    <div class="steps-container">
+      <div class="step-card" data-step="1">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-icon">🃏</div>
+          <h3>ערבב את הקלפים!</h3>
+          <p>ערבב טוב טוב כדי שהקלפים יהיו בסדר אקראי. זה הוגן לשניכם!</p>
+        </div>
+      </div>
+      <div class="step-card" data-step="2">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-icon">✋</div>
+          <h3>קח 7 קלפים</h3>
+          <p>כל שחקן לוקח 7 קלפים ליד. אלה הקלפים שיש לך לשחק איתם!</p>
+        </div>
+      </div>
+      <div class="step-card" data-step="3">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-icon">🥇</div>
+          <h3>שים 6 קלפי פרס</h3>
+          <p>שים 6 קלפים הפוכים בצד – אלה הפרסים שתקבל כשתנצח בקרב!</p>
+        </div>
+      </div>
+      <div class="step-card" data-step="4">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-icon">🐉</div>
+          <h3>שים פוקימון פעיל</h3>
+          <p>בחר פוקימון בסיסי מהיד שלך ושים אותו באמצע השולחן – זה הלוחם שלך!</p>
+        </div>
+      </div>
+    </div>
+    <button class="btn-next" onclick="goTo('screen-turn')">הבא: סדר התור ⚡</button>
+  </div>
+
+  <!-- SCREEN: Turn Order -->
+  <div id="screen-turn" class="screen">
+    <header class="top-bar">
+      <button class="back-btn" onclick="goTo('screen-menu')">← חזרה</button>
+      <h2>סדר התור ⚡</h2>
+    </header>
+    <div class="turn-container">
+      <div class="turn-phase" id="phase-draw">
+        <div class="phase-icon">📤</div>
+        <h3>שלב 1: משיכה</h3>
+        <p>בתחילת כל תור, משוך <strong>קלף אחד</strong> מהחפיסה שלך. יותר קלפים = יותר אפשרויות!</p>
+      </div>
+      <div class="phase-arrow">⬇️</div>
+      <div class="turn-phase" id="phase-play">
+        <div class="phase-icon">🎮</div>
+        <h3>שלב 2: שחק קלפים</h3>
+        <p>אפשר לשחק <strong>כמה קלפים שרוצים</strong>! שים פוקימון, השתמש בפריטים, ושחק אימונים.</p>
+      </div>
+      <div class="phase-arrow">⬇️</div>
+      <div class="turn-phase" id="phase-energy">
+        <div class="phase-icon">⚡</div>
+        <h3>שלב 3: צרף אנרגיה</h3>
+        <p>צרף <strong>אנרגיה אחת</strong> לפוקימון שלך. בלי אנרגיה – אין התקפה חזקה!</p>
+      </div>
+      <div class="phase-arrow">⬇️</div>
+      <div class="turn-phase" id="phase-attack">
+        <div class="phase-icon">💥</div>
+        <h3>שלב 4: התקפה!</h3>
+        <p>תקוף עם הפוקימון שלך! לאחר ההתקפה – <strong>התור עובר לשחקן השני</strong>.</p>
+      </div>
+    </div>
+    <button class="btn-next" onclick="goTo('screen-strategy')">הבא: אסטרטגיה 🧠</button>
+  </div>
+
+  <!-- SCREEN: Strategy -->
+  <div id="screen-strategy" class="screen">
+    <header class="top-bar">
+      <button class="back-btn" onclick="goTo('screen-menu')">← חזרה</button>
+      <h2>אסטרטגיה חכמה 🧠</h2>
+    </header>
+    <div class="strategy-container">
+
+      <div class="tip-card tip-green">
+        <div class="tip-emoji">🔋</div>
+        <h3>טיפ 1: אנרגיה תחילה!</h3>
+        <p>תמיד שים אנרגיה על צ'אריזארד לפני שהוא יוצא לקרב. צ'אריזארד צריך הרבה אנרגיה להתקפות הכי חזקות!</p>
+        <div class="tip-example">
+          <span class="bad">❌ לא טוב:</span> שלח צ'אריזארד בלי אנרגיה<br/>
+          <span class="good">✅ טוב:</span> שים אנרגיה על צ'אריזארד בספסל 2-3 תורות לפני
+        </div>
+      </div>
+
+      <div class="tip-card tip-orange">
+        <div class="tip-emoji">🔄</div>
+        <h3>טיפ 2: שמור את הספסל!</h3>
+        <p>הספסל הוא מקום לפוקימון שמחכים לקרב. תמיד שים כמה פוקימון בספסל כגיבוי!</p>
+        <div class="tip-example">
+          <span class="bad">❌ לא טוב:</span> לשחק עם פוקימון אחד בלבד<br/>
+          <span class="good">✅ טוב:</span> לשמור ריאשאראם או אוריקוריו כגיבוי
+        </div>
+      </div>
+
+      <div class="tip-card tip-blue">
+        <div class="tip-emoji">🎯</div>
+        <h3>טיפ 3: תקוף את החלש!</h3>
+        <p>תמיד תבדוק מי הפוקימון הכי חלש של היריב – עדיף לנצח פוקימון עם HP נמוך!</p>
+        <div class="tip-example">
+          <span class="bad">❌ לא טוב:</span> לתקוף פוקימון עם 200 HP שנשאר מלא<br/>
+          <span class="good">✅ טוב:</span> לגמור פוקימון שכבר קיבל נזק
+        </div>
+      </div>
+
+      <div class="tip-card tip-purple">
+        <div class="tip-emoji">🃏</div>
+        <h3>טיפ 4: השתמש באימונים!</h3>
+        <p>קלפי אימון כמו "Rare Candy" ו-"Lillie's Determination" עוזרים מאוד – תשתמש בהם!</p>
+        <div class="tip-example">
+          <span class="good">🍬 Rare Candy:</span> מצמיח צ'ארמנדר ישר לצ'אריזארד!<br/>
+          <span class="good">👩 Lillie's Determination:</span> מגרילה 8 קלפים!
+        </div>
+      </div>
+
+      <div class="tip-card tip-red">
+        <div class="tip-emoji">🏁</div>
+        <h3>טיפ 5: זכור את הניצחון!</h3>
+        <p>כדי לנצח צריך לאסוף <strong>6 קלפי פרס</strong>. לכל פוקימון שמנצחים – לוקחים קלף פרס אחד!</p>
+        <div class="tip-example">
+          <span class="good">🌟 EX פוקימון:</span> נותן 2 קלפי פרס כשמנצחים אותו!<br/>
+          <span class="good">🎯 המטרה:</span> לנצח 6 פוקימון כדי לנצח את המשחק
+        </div>
+      </div>
+
+    </div>
+    <button class="btn-next" onclick="goTo('screen-quiz')">עכשיו – חידון! 🏆</button>
+  </div>
+
+  <!-- SCREEN: Quiz -->
+  <div id="screen-quiz" class="screen">
+    <header class="top-bar">
+      <button class="back-btn" onclick="goTo('screen-menu')">← חזרה</button>
+      <h2>חידון! 🏆</h2>
+    </header>
+    <div class="quiz-container">
+      <div id="quiz-area">
+        <div class="quiz-progress">
+          שאלה <span id="q-num">1</span> מתוך <span id="q-total">5</span>
+        </div>
+        <div class="quiz-card">
+          <div class="quiz-icon" id="q-icon">❓</div>
+          <h3 id="q-text">שאלה...</h3>
+          <div class="quiz-options" id="q-options"></div>
+          <div class="quiz-feedback" id="q-feedback"></div>
+        </div>
+      </div>
+      <div id="quiz-result" class="hidden">
+        <div class="result-icon" id="result-icon">🏅</div>
+        <h2 id="result-title">כל הכבוד!</h2>
+        <p id="result-text"></p>
+        <button class="btn-fire" onclick="restartQuiz()">שחק שוב! 🔄</button>
+        <button class="btn-outline" onclick="goTo('screen-menu')">תפריט ראשי 🏠</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('SW registered:', reg.scope))
+          .catch(err => console.log('SW error:', err));
+      });
+    }
+  </script>
+</body>
+</html>

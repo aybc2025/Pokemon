@@ -1,0 +1,26 @@
+{
+  "name": "מדריך הקרב של צ'אריזארד",
+  "short_name": "צ'אריזארד TCG",
+  "description": "למד איך לנצח בקרב פוקימון TCG!",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#1a0a00",
+  "theme_color": "#e63946",
+  "orientation": "portrait",
+  "lang": "he",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
