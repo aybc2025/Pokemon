@@ -24,10 +24,8 @@
     <div class="intro-content">
       <div class="charizard-emoji bounce">🔥</div>
       <h1>מדריך הקרב<br/>של <span class="gold">צ'אריזארד!</span></h1>
-      <p class="subtitle">למד איך לנצח כמו אלוף!</p>
-      <button class="btn-fire" onclick="goTo('screen-menu')">
-        בואו נתחיל! 🚀
-      </button>
+      <p class="subtitle">משחק: Pokémon TCG Live 📱</p>
+      <button class="btn-fire" onclick="goTo('screen-menu')">בואו נתחיל! 🚀</button>
     </div>
   </div>
 
@@ -40,8 +38,8 @@
     <div class="menu-grid">
       <div class="menu-card card-red" onclick="goTo('screen-setup')">
         <div class="card-icon">🎴</div>
-        <div class="card-title">לפני הקרב</div>
-        <div class="card-sub">איך מכינים את החפיסה</div>
+        <div class="card-title">הקלפים שלנו</div>
+        <div class="card-sub">מי נמצא בחפיסה?</div>
       </div>
       <div class="menu-card card-orange" onclick="goTo('screen-turn')">
         <div class="card-icon">⚡</div>
@@ -51,7 +49,7 @@
       <div class="menu-card card-yellow" onclick="goTo('screen-strategy')">
         <div class="card-icon">🧠</div>
         <div class="card-title">אסטרטגיה</div>
-        <div class="card-sub">חשוב לפני שמתקיפים!</div>
+        <div class="card-sub">איך מנצחים!</div>
       </div>
       <div class="menu-card card-blue" onclick="goTo('screen-quiz')">
         <div class="card-icon">🏆</div>
@@ -61,45 +59,78 @@
     </div>
   </div>
 
-  <!-- SCREEN: Setup -->
+  <!-- SCREEN: Our Cards -->
   <div id="screen-setup" class="screen">
     <header class="top-bar">
       <button class="back-btn" onclick="goTo('screen-menu')">← חזרה</button>
-      <h2>לפני הקרב 🎴</h2>
+      <h2>הקלפים שלנו 🎴</h2>
     </header>
     <div class="steps-container">
-      <div class="step-card" data-step="1">
-        <div class="step-num">1</div>
-        <div class="step-body">
-          <div class="step-icon">🃏</div>
-          <h3>ערבב את הקלפים!</h3>
-          <p>ערבב טוב טוב כדי שהקלפים יהיו בסדר אקראי. זה הוגן לשניכם!</p>
+
+      <div class="section-title">🐉 הפוקימון שלנו</div>
+
+      <div class="pokemon-card poke-main">
+        <div class="poke-icon">🔥</div>
+        <div class="poke-body">
+          <h3>צ'אריזארד ex — הגיבור הראשי!</h3>
+          <p>הכי חזק בחפיסה! יכול לתקוף ב-<strong>360 נקודות נזק</strong>. צריך הרבה אנרגיה כדי להיות מוכן.</p>
+          <div class="poke-count">4 קלפים ✕</div>
         </div>
       </div>
-      <div class="step-card" data-step="2">
-        <div class="step-num">2</div>
-        <div class="step-body">
-          <div class="step-icon">✋</div>
-          <h3>קח 7 קלפים</h3>
-          <p>כל שחקן לוקח 7 קלפים ליד. אלה הקלפים שיש לך לשחק איתם!</p>
+
+      <div class="pokemon-card poke-evo">
+        <div class="poke-icon">🦎</div>
+        <div class="poke-body">
+          <h3>צ'ארמנדר ← צ'ארמליאון ← צ'אריזארד</h3>
+          <p>צ'ארמנדר הוא הבייבי. הוא צריך להתפתח. עם <strong>Rare Candy</strong> — הוא קופץ ישר לצ'אריזארד!</p>
+          <div class="poke-count">4 צ'ארמנדר + 2 צ'ארמליאון</div>
         </div>
       </div>
-      <div class="step-card" data-step="3">
-        <div class="step-num">3</div>
-        <div class="step-body">
-          <div class="step-icon">🥇</div>
-          <h3>שים 6 קלפי פרס</h3>
-          <p>שים 6 קלפים הפוכים בצד – אלה הפרסים שתקבל כשתנצח בקרב!</p>
+
+      <div class="pokemon-card poke-support">
+        <div class="poke-icon">💃</div>
+        <div class="poke-body">
+          <h3>אוריקוריו — הלוחם הזמני</h3>
+          <p>בזמן שצ'אריזארד מתכונן בספסל, אוריקוריו נלחם! הוא מקבל כוח מאימונים.</p>
+          <div class="poke-count">2 קלפים</div>
         </div>
       </div>
-      <div class="step-card" data-step="4">
-        <div class="step-num">4</div>
-        <div class="step-body">
-          <div class="step-icon">🐉</div>
-          <h3>שים פוקימון פעיל</h3>
-          <p>בחר פוקימון בסיסי מהיד שלך ושים אותו באמצע השולחן – זה הלוחם שלך!</p>
+
+      <div class="pokemon-card poke-support">
+        <div class="poke-icon">🐱</div>
+        <div class="poke-body">
+          <h3>Meowth ex — הבלש</h3>
+          <p>כשמשחקים אותו, הוא מחפש לך קלף אימון מהחפיסה! כמו בלש שמוצא מה שצריך.</p>
+          <div class="poke-count">1 קלף</div>
         </div>
       </div>
+
+      <div class="section-title" style="margin-top:8px">🃏 הכלים החשובים</div>
+
+      <div class="step-card">
+        <div class="step-num">🍬</div>
+        <div class="step-body">
+          <h3>Rare Candy — הקיצור!</h3>
+          <p>מצמיח צ'ארמנדר ישר לצ'אריזארד בלי לחכות! זה הקלף הכי חשוב בחפיסה.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">👩</div>
+        <div class="step-body">
+          <h3>Lillie's Determination — הכוח!</h3>
+          <p>שולפת 8 קלפים חדשים! כשאין קלפים טובים ביד — זה מציל את המשחק.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">🔥</div>
+        <div class="step-body">
+          <h3>Firebreather — אנרגיה מהחפיסה!</h3>
+          <p>מביא 2 אנרגיות לצ'אריזארד ישר מהחפיסה. בלי אנרגיה — אין התקפה!</p>
+        </div>
+      </div>
+
     </div>
     <button class="btn-next" onclick="goTo('screen-turn')">הבא: סדר התור ⚡</button>
   </div>
@@ -111,28 +142,44 @@
       <h2>סדר התור ⚡</h2>
     </header>
     <div class="turn-container">
-      <div class="turn-phase" id="phase-draw">
+      <div class="turn-phase">
         <div class="phase-icon">📤</div>
-        <h3>שלב 1: משיכה</h3>
-        <p>בתחילת כל תור, משוך <strong>קלף אחד</strong> מהחפיסה שלך. יותר קלפים = יותר אפשרויות!</p>
+        <div>
+          <h3>1. משוך קלף</h3>
+          <p>תמיד מושכים קלף אחד בהתחלת התור. יותר קלפים = יותר אפשרויות!</p>
+        </div>
       </div>
-      <div class="phase-arrow">⬇️</div>
-      <div class="turn-phase" id="phase-play">
-        <div class="phase-icon">🎮</div>
-        <h3>שלב 2: שחק קלפים</h3>
-        <p>אפשר לשחק <strong>כמה קלפים שרוצים</strong>! שים פוקימון, השתמש בפריטים, ושחק אימונים.</p>
+      <div class="phase-arrow">⬇</div>
+      <div class="turn-phase">
+        <div class="phase-icon">🐣</div>
+        <div>
+          <h3>2. שים פוקימון בספסל</h3>
+          <p>שים צ'ארמנדר בספסל כדי שיתחיל להתכונן. הספסל = מקום האימון!</p>
+        </div>
       </div>
-      <div class="phase-arrow">⬇️</div>
-      <div class="turn-phase" id="phase-energy">
+      <div class="phase-arrow">⬇</div>
+      <div class="turn-phase">
         <div class="phase-icon">⚡</div>
-        <h3>שלב 3: צרף אנרגיה</h3>
-        <p>צרף <strong>אנרגיה אחת</strong> לפוקימון שלך. בלי אנרגיה – אין התקפה חזקה!</p>
+        <div>
+          <h3>3. צרף אנרגיה אחת</h3>
+          <p>אפשר לצרף <strong>אנרגיה אחת בלבד</strong> לכל תור. תמיד תשים אותה על הפוקימון שהכי צריך!</p>
+        </div>
       </div>
-      <div class="phase-arrow">⬇️</div>
-      <div class="turn-phase" id="phase-attack">
+      <div class="phase-arrow">⬇</div>
+      <div class="turn-phase">
+        <div class="phase-icon">🃏</div>
+        <div>
+          <h3>4. שחק קלפי אימון</h3>
+          <p>Rare Candy, Lillie's Determination, Firebreather — השתמש בהם עכשיו!</p>
+        </div>
+      </div>
+      <div class="phase-arrow">⬇</div>
+      <div class="turn-phase highlight-phase">
         <div class="phase-icon">💥</div>
-        <h3>שלב 4: התקפה!</h3>
-        <p>תקוף עם הפוקימון שלך! לאחר ההתקפה – <strong>התור עובר לשחקן השני</strong>.</p>
+        <div>
+          <h3>5. תקוף!</h3>
+          <p>ההתקפה מסיימת את התור. אחרי זה — התור עובר ליריב.</p>
+        </div>
       </div>
     </div>
     <button class="btn-next" onclick="goTo('screen-strategy')">הבא: אסטרטגיה 🧠</button>
@@ -142,62 +189,95 @@
   <div id="screen-strategy" class="screen">
     <header class="top-bar">
       <button class="back-btn" onclick="goTo('screen-menu')">← חזרה</button>
-      <h2>אסטרטגיה חכמה 🧠</h2>
+      <h2>אסטרטגיה 🧠</h2>
     </header>
     <div class="strategy-container">
 
-      <div class="tip-card tip-green">
-        <div class="tip-emoji">🔋</div>
-        <h3>טיפ 1: אנרגיה תחילה!</h3>
-        <p>תמיד שים אנרגיה על צ'אריזארד לפני שהוא יוצא לקרב. צ'אריזארד צריך הרבה אנרגיה להתקפות הכי חזקות!</p>
-        <div class="tip-example">
-          <span class="bad">❌ לא טוב:</span> שלח צ'אריזארד בלי אנרגיה<br/>
-          <span class="good">✅ טוב:</span> שים אנרגיה על צ'אריזארד בספסל 2-3 תורות לפני
-        </div>
+      <div class="strategy-intro">
+        הדק שלנו הוא דק של <strong>בנייה איטית וניצחון חזק</strong>.<br/>
+        צריך סבלנות — אבל ברגע שצ'אריזארד מוכן? אף אחד לא עוצר אותנו! 🔥
       </div>
 
       <div class="tip-card tip-orange">
-        <div class="tip-emoji">🔄</div>
-        <h3>טיפ 2: שמור את הספסל!</h3>
-        <p>הספסל הוא מקום לפוקימון שמחכים לקרב. תמיד שים כמה פוקימון בספסל כגיבוי!</p>
+        <div class="tip-emoji">🥚</div>
+        <h3>טיפ 1: תור 1 — צ'ארמנדר לספסל!</h3>
+        <p>בתור הראשון תמיד שים <strong>צ'ארמנדר בספסל</strong> וגם צרף לו אנרגיה. זה הצעד הכי חשוב!</p>
         <div class="tip-example">
-          <span class="bad">❌ לא טוב:</span> לשחק עם פוקימון אחד בלבד<br/>
-          <span class="good">✅ טוב:</span> לשמור ריאשאראם או אוריקוריו כגיבוי
+          <span class="bad">❌ לא טוב:</span> לחכות לתור הבא לשים את צ'ארמנדר<br/>
+          <span class="good">✅ טוב:</span> צ'ארמנדר בספסל + אנרגיה עליו כבר בתור 1
         </div>
       </div>
 
       <div class="tip-card tip-blue">
-        <div class="tip-emoji">🎯</div>
-        <h3>טיפ 3: תקוף את החלש!</h3>
-        <p>תמיד תבדוק מי הפוקימון הכי חלש של היריב – עדיף לנצח פוקימון עם HP נמוך!</p>
+        <div class="tip-emoji">💃</div>
+        <h3>טיפ 2: אוריקוריו מגן בחזית</h3>
+        <p>שלח את <strong>אוריקוריו</strong> לקרב בזמן שצ'אריזארד גדל בשקט בספסל. אוריקוריו מקבל כוח מכל קלף אימון שמשחקים!</p>
         <div class="tip-example">
-          <span class="bad">❌ לא טוב:</span> לתקוף פוקימון עם 200 HP שנשאר מלא<br/>
-          <span class="good">✅ טוב:</span> לגמור פוקימון שכבר קיבל נזק
+          <span class="good">✅ כך עובד זה:</span> אוריקוריו נלחמת → משחקים Lillie's Determination → אוריקוריו מקבל יותר כוח!
+        </div>
+      </div>
+
+      <div class="tip-card tip-yellow">
+        <div class="tip-emoji">🍬</div>
+        <h3>טיפ 3: Rare Candy — הקפיצה הגדולה!</h3>
+        <p>ברגע שצ'ארמנדר בספסל עם אנרגיה — שחק <strong>Rare Candy</strong> כדי שיהפוך ישר לצ'אריזארד! לא צריך לחכות לצ'ארמליאון.</p>
+        <div class="tip-example">
+          <span class="good">⏱️ מתי:</span> תור 2 או 3 — ברגע שיש Rare Candy ביד<br/>
+          <span class="good">🎯 המטרה:</span> צ'אריזארד עם 3 אנרגיות מוכן לתקוף בתור 3!
+        </div>
+      </div>
+
+      <div class="tip-card tip-green">
+        <div class="tip-emoji">🔥</div>
+        <h3>טיפ 4: Firebreather טוען אנרגיה מהר</h3>
+        <p>במקום לחכות תור אחרי תור — שחק <strong>Firebreather</strong> ותקבל 2 אנרגיות בבת אחת ישר לצ'אריזארד!</p>
+        <div class="tip-example">
+          <span class="good">⚡ Firebreather:</span> 2 אנרגיות מהחפיסה — כמו לדלג על 2 תורות<br/>
+          <span class="good">🔄 Energy Retrieval:</span> מחזיר אנרגיות שנזרקו בחזרה ליד
         </div>
       </div>
 
       <div class="tip-card tip-purple">
-        <div class="tip-emoji">🃏</div>
-        <h3>טיפ 4: השתמש באימונים!</h3>
-        <p>קלפי אימון כמו "Rare Candy" ו-"Lillie's Determination" עוזרים מאוד – תשתמש בהם!</p>
+        <div class="tip-emoji">👩</div>
+        <h3>טיפ 5: Lillie's Determination — שמור אותו לרגע הנכון</h3>
+        <p>כשהיד שלך ריקה או שאין קלפים טובים — שחק <strong>Lillie's Determination</strong> ותקבל 8 קלפים חדשים. זה כמו לאפס הכל!</p>
         <div class="tip-example">
-          <span class="good">🍬 Rare Candy:</span> מצמיח צ'ארמנדר ישר לצ'אריזארד!<br/>
-          <span class="good">👩 Lillie's Determination:</span> מגרילה 8 קלפים!
+          <span class="bad">❌ לא טוב:</span> לשחק אותו כשיש כבר הרבה קלפים טובים ביד<br/>
+          <span class="good">✅ טוב:</span> לשחק כשהיד ריקה ואין Rare Candy או אנרגיה
         </div>
       </div>
 
       <div class="tip-card tip-red">
-        <div class="tip-emoji">🏁</div>
-        <h3>טיפ 5: זכור את הניצחון!</h3>
-        <p>כדי לנצח צריך לאסוף <strong>6 קלפי פרס</strong>. לכל פוקימון שמנצחים – לוקחים קלף פרס אחד!</p>
+        <div class="tip-emoji">🐱</div>
+        <h3>טיפ 6: Meowth ex — שולף אימון בדיוק בזמן</h3>
+        <p>כשמשחקים <strong>Meowth ex</strong> מהיד לספסל — הוא מחפש לך כל קלף אימון מהחפיסה. צריך Firebreather? Lillie's? הוא ימצא!</p>
         <div class="tip-example">
-          <span class="good">🌟 EX פוקימון:</span> נותן 2 קלפי פרס כשמנצחים אותו!<br/>
-          <span class="good">🎯 המטרה:</span> לנצח 6 פוקימון כדי לנצח את המשחק
+          <span class="good">✅ מתי לשחק:</span> כשצריך בדיוק קלף אימון ספציפי ואין אותו ביד
+        </div>
+      </div>
+
+      <div class="tip-card tip-orange">
+        <div class="tip-emoji">👑</div>
+        <h3>טיפ 7: Boss's Orders — בחר את היריב!</h3>
+        <p>יש פוקימון חלש של היריב שמסתתר בספסל? שחק <strong>Boss's Orders</strong> ואלץ אותו לצאת לקרב! צ'אריזארד יסיים אותו בהתקפה אחת.</p>
+        <div class="tip-example">
+          <span class="good">✅ מתי לשחק:</span> כשיש פוקימון שכבר קיבל נזק — הוצא אותו ותקוף!<br/>
+          <span class="good">🏆 תוצאה:</span> קלף פרס נוסף ומהיר
+        </div>
+      </div>
+
+      <div class="tip-card tip-green">
+        <div class="tip-emoji">🏆</div>
+        <h3>טיפ 8: תחשוב על קלפי הפרס!</h3>
+        <p>צריך <strong>6 קלפי פרס</strong> כדי לנצח. פוקימון EX נותן 2 פרסים — שווה לתקוף אותם! נסה לנצח מהר לפני שהיריב מספיק להתכונן.</p>
+        <div class="tip-example">
+          <span class="good">⭐ EX = 2 פרסים:</span> 3 ניצחונות על EX = ניצחון במשחק!<br/>
+          <span class="good">🎯 סדר עדיפויות:</span> EX חלש > פוקימון עם HP נמוך > כל השאר
         </div>
       </div>
 
     </div>
-    <button class="btn-next" onclick="goTo('screen-quiz')">עכשיו – חידון! 🏆</button>
+    <button class="btn-next" onclick="goTo('screen-quiz')">עכשיו — חידון! 🏆</button>
   </div>
 
   <!-- SCREEN: Quiz -->
@@ -209,8 +289,9 @@
     <div class="quiz-container">
       <div id="quiz-area">
         <div class="quiz-progress">
-          שאלה <span id="q-num">1</span> מתוך <span id="q-total">5</span>
+          שאלה <span id="q-num">1</span> מתוך <span id="q-total">6</span>
         </div>
+        <div class="progress-bar-wrap"><div class="progress-bar" id="progress-bar"></div></div>
         <div class="quiz-card">
           <div class="quiz-icon" id="q-icon">❓</div>
           <h3 id="q-text">שאלה...</h3>
